@@ -9,7 +9,7 @@
 		<relativePath>..</relativePath> <!-- lookup parent from repository -->
 	</parent>
   <groupId>org.quickstart</groupId>
-  <artifactId>quickstart-front-javascript</artifactId>
+  <artifactId>quickstart-javascript</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>quickstart-javascript</name>
   <url>http://maven.apache.org</url>
