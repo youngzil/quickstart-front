@@ -30,6 +30,7 @@
 		<module>quickstart-vuejs</module>
 		<module>quickstart-ztree</module>
 		<module>quickstart-layui</module>
+		<module>quickstart-requirejs</module>
 	</modules>
 
 </project>
