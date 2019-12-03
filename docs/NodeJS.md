@@ -55,10 +55,80 @@ https://www.runoob.com/nodejs/nodejs-npm.html
 
 aid-cli是一个基于webpack,提供灵活配置的前端项目脚手架工具,满足自动化开发,数据模拟,资源构建,模块管理,打包发布等等日常开发任务需求,并且提供了多种项目模板,不论您使用的是vue技术栈还是react技术栈,让您省去繁琐的编译运行配置,轻松便捷的快速投入到实际业务的开发中去
 
+
+快速开始
+安装环境依赖: Node.js (>=4.x, 6.x preferred), npm 3+ and Git
+
+第一步: 安装 aid-cli 命令行工具
+npm install aid-cli -g
+
+使用镜像解决 node-sass 编译环境问题
 npm i -g aid-cli --sass-binary-site=http://npm.taobao.org/mirrors/node-sass/
+
+查看安装版本
+aid -V
+
+npm uninstall aid-cli
+
+
+第二步: 初始化项目
+aid init my-project
+
+第三步: 开始开发
+cd my-project
+aid vendor 
+
+PS: 第三方包如有更新需重新运行
+aid dev -p 3000
+使用 aid vendor 将项目第三方依赖包预先打包,提升项目开发编译速度,然后使用 aid dev 启动开发服务器,启动完毕会自动打开默认浏览器并跳转至项目首页
+
+第四步: 测试
+aid test --watch
+
+根据不同的项目模板执行不同的单元测试,单元测试配置文件默认位于 test/unit/fixture/conf.js
+module.exports = {
+    entry,    /* 测试用例入口文件路径 */
+    reportFolder,   /* 测试报告路径 */
+    webpack: webpackConfig    /* 自定义 webpack.test.js 文件 */
+}
+
+
+可选: 集成测试
+aid test --e2e
+默认测试浏览器为 chrome ,集成测试配置文件默认位于 test/e2e/fixture/conf.js
+module.exports = {
+    src_folders: [resolve('test', 'e2e', 'spec')],  /* 测试用例路径 */
+    output_folder: resolve('test', 'e2e', 'report')    /* 测试报告路径 */
+}
+
+
+后续: 打包发布
+aid build
+完成源码的编译压缩,静态资源合并压缩,路径处理,html注入,构建版本号处理等等
+
+
+
+能力平台打包方式：
+安装nvm、node
+
+安装aid-cli
+npm i -g aid-cli@2.0.0 --sass-binary-site=http://npm.taobao.org/mirrors/node-sass/
 
 编译
 aid build -N
+
+cd dist
+jar cf webdev.war *
+
+
+
+简介
+1. 压缩包：
+jar cvf filename.jar a.class b.class: 压缩指定文件；
+jar cvf weibosdkcore.jar *: 全部压缩；
+
+2. 解压包：
+jar xvf test.jar
 
 
 

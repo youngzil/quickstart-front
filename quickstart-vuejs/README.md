@@ -28,6 +28,7 @@ yarn global add @vue/cli
 
 vue -V
 vue --version
+vue --version
 
 
 
