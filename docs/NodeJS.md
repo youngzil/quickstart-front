@@ -1,9 +1,13 @@
-
+1、NVM、NodeJS、NPM介绍
+2、NVM安装和NodeJS安装
+3、
 
 
 
 
 ---------------------------------------------------------------------------------------------------------------------
+
+NVM、NodeJS、NPM介绍
 
 1、nvm管理多个活动的node.js版本，可以方便的在同一台设备上进行多个node版本之间切换
 2、Node.js是能够在服务器端运行JavaScript的开放源代码、跨平台JavaScript运行环境。
@@ -13,14 +17,6 @@
 
 
 
-
-
-
-
-
-
-
----------------------------------------------------------------------------------------------------------------------
 NVM
 节点版本管理器-兼容POSIX的bash脚本，用于管理多个活动的node.js版本
 https://github.com/nvm-sh/nvm
@@ -44,7 +40,8 @@ https://github.com/nodejs/node
 https://zh.wikipedia.org/wiki/Node.js
 
 
-
+npm 是什么？
+npm 是JavaScript 世界的包管理工具，并且是Node.js 平台的默认包管理工具。通过npm 可以安装、共享、分发代码，管理项目依赖关系。
 
 NPM是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题，常见的使用场景有以下几种：
 允许用户从NPM服务器下载别人编写的第三方包到本地使用。
@@ -52,8 +49,8 @@ NPM是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署�
 允许用户将自己编写的包或命令行程序上传到NPM服务器供别人使用。
 
 https://www.runoob.com/nodejs/nodejs-npm.html
-
-
+https://www.npmjs.cn/
+https://github.com/npm/cli
 
 
 什么是aid-cli
@@ -138,7 +135,9 @@ aid build
 安装nvm、node
 
 安装aid-cli
-npm i -g aid-cli@2.0.0 --sass-binary-site=http://npm.taobao.org/mirrors/node-sass/
+npm i -g aid-cli --sass-binary-site=http://npm.taobao.org/mirrors/node-sass/  
+或者  
+npm i -g aid-cli@2.0.0 --sass-binary-site=http://npm.taobao.org/mirrors/node-sass/  
 
 编译
 aid build -N
@@ -170,7 +169,7 @@ NVM安装和NodeJS安装
 这种安装都需要联网
 要安装或更新 nvm，应运行install脚本。为此，您可以手动下载并运行脚本，也可以使用以下cURL或Wget命令：
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 或者
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
 
@@ -183,6 +182,12 @@ export NVM_DIR="$HOME/.nvm"
 
 source ~/.bashrc
 
+MacOS是下面这个文件
+~/.bash_profile
+或者其他系统如
+~/.bash_profile, ~/.zshrc, ~/.profile, or ~/.bashrc
+
+
 nvm --version 可查看版本
 nvm ls-remote   可查看node所有版本，可以通过nvm安装的Node.js的可用版本
 
@@ -190,9 +195,20 @@ nvm install <version>(版本号) 例如：nvm install v12.13.1
 nvm use <version>(版本号) 例如：nvm use v12.13.1
 nvm alias default v12.13.1
 
+
 安装后可通过node -v ,npm -v 查看版本，说明安装成功
-node --version
+node --version 或者 nvm current
 npm --version
+
+
+# 查看本地已经安装的Node.js版本列表
+nvm ls
+
+# 将Node.js版本切换到6.11.0
+nvm use v6.11.0
+
+# 查看当前的Node.js版本
+nvm current
 
 
 
@@ -202,6 +218,13 @@ nvm ls                   // 查看目前已安装的 node 及当前所使用的 
 nvm ls-remote            // 查看目前线上所能安装的所有 node 版本
 nvm alias default v8.11.1 // 更改默认版本，使用 6.11.0 作为预设使用的 node 版本
 nvm current     //查看当前的Node.js版本
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+
 
 
 
