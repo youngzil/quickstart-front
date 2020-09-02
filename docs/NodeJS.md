@@ -1,7 +1,87 @@
-1、NVM、NodeJS、NPM介绍
-2、NVM安装和NodeJS安装
+1、NVM安装和NodeJS安装
+2、NVM、NodeJS、NPM介绍
 3、
 
+
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+NVM安装和NodeJS安装
+
+
+nvm官网
+https://github.com/nvm-sh/nvm
+
+
+这种安装都需要联网
+要安装或更新 nvm，应运行install脚本。为此，您可以手动下载并运行脚本，也可以使用以下cURL或Wget命令：
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+或者
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
+
+
+vim ~/.bashrc 写入下面代码
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+source ~/.bashrc
+
+MacOS是下面这个文件
+~/.bash_profile
+或者其他系统如
+~/.bash_profile, ~/.zshrc, ~/.profile, or ~/.bashrc
+
+
+nvm --version 可查看版本
+nvm ls-remote   可查看node所有版本，可以通过nvm安装的Node.js的可用版本
+
+nvm install <version>(版本号) 例如：nvm install v12.13.1
+nvm use <version>(版本号) 例如：nvm use v12.13.1
+nvm alias default v12.13.1
+
+
+安装后可通过node -v ,npm -v 查看版本，说明安装成功
+node --version 或者 nvm current
+npm --version
+
+
+# 查看本地已经安装的Node.js版本列表
+nvm ls
+nvm list
+
+# 将Node.js版本切换到6.11.0【临时生效】
+nvm use v6.11.0
+
+#永久切换NodeJS版本【设置default】
+nvm alias default 4.6.0
+nvm use 4.6.0
+
+
+# 查看当前的Node.js版本
+nvm current
+
+
+
+nvm uninstall 6.11.0     // 移除 node 6.11.0
+nvm use 6.11.0           // 使用 node 6.11.0
+nvm ls                   // 查看目前已安装的 node 及当前所使用的 node，查看所有已安装版本的列表
+nvm ls-remote            // 查看目前线上所能安装的所有 node 版本
+nvm alias default v8.11.1 // 更改默认版本，使用 6.11.0 作为预设使用的 node 版本
+nvm current     //查看当前的Node.js版本
+
+
+
+
+问题：
+N/A version is not installed...
+Node N/A 所指向的版本不存在
+
+参考
+https://blog.csdn.net/qq_37164975/article/details/106441692
 
 
 
@@ -164,61 +244,6 @@ http://10.1.241.36:8888/taurus-desktop/guide/get-started
 
 
 ---------------------------------------------------------------------------------------------------------------------
-NVM安装和NodeJS安装
-
-这种安装都需要联网
-要安装或更新 nvm，应运行install脚本。为此，您可以手动下载并运行脚本，也可以使用以下cURL或Wget命令：
-
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-或者
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
-
-
-vim ~/.bashrc 写入下面代码
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-source ~/.bashrc
-
-MacOS是下面这个文件
-~/.bash_profile
-或者其他系统如
-~/.bash_profile, ~/.zshrc, ~/.profile, or ~/.bashrc
-
-
-nvm --version 可查看版本
-nvm ls-remote   可查看node所有版本，可以通过nvm安装的Node.js的可用版本
-
-nvm install <version>(版本号) 例如：nvm install v12.13.1
-nvm use <version>(版本号) 例如：nvm use v12.13.1
-nvm alias default v12.13.1
-
-
-安装后可通过node -v ,npm -v 查看版本，说明安装成功
-node --version 或者 nvm current
-npm --version
-
-
-# 查看本地已经安装的Node.js版本列表
-nvm ls
-
-# 将Node.js版本切换到6.11.0
-nvm use v6.11.0
-
-# 查看当前的Node.js版本
-nvm current
-
-
-
-nvm uninstall 6.11.0     // 移除 node 6.11.0
-nvm use 6.11.0           // 使用 node 6.11.0
-nvm ls                   // 查看目前已安装的 node 及当前所使用的 node，查看所有已安装版本的列表
-nvm ls-remote            // 查看目前线上所能安装的所有 node 版本
-nvm alias default v8.11.1 // 更改默认版本，使用 6.11.0 作为预设使用的 node 版本
-nvm current     //查看当前的Node.js版本
-
 
 
 

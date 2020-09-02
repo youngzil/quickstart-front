@@ -16,14 +16,23 @@ https://github.com/facebook/react/
 
 
 
+
+
 使用React构建本机应用程序的框架。
 https://facebook.github.io/react-native/
 https://github.com/facebook/react-native
 
-
 React Native中文网
 https://reactnative.cn/
 https://zh-hans.reactjs.org/
+
+React Native 由 Facebook 开发，这种框架可用于使用 JavaScript 和 React JavaScript 库（同样由 Facebook 开发），构建原生移动应用程序。其他用户包括：《探索》频道和 CBS 体育新闻网。
+
+支持的操作系统：OS X
+相关网站：https://facebook.github.io/react-native/
+
+
+
 
 
 Flutter是谷歌的移动UI框架，可以快速在iOS和Android上构建高质量的原生用户界面。 Flutter可以与现有的代码一起工作。在全世界，Flutter正在被越来越多的开发者和组织使用，并且Flutter是完全免费、开源的。
@@ -42,6 +51,17 @@ Avue.js是基于现有的element-ui库进行的二次封装，从而简化一些
 
 
 Element，一套为开发者、设计师和产品经理准备的基于 Vue 2.0 的组件库，提供了配套设计资源，帮助你的网站快速成型。由饿了么公司前端团队开源。
+
+
+
+
+
+Ember.js是一个开源的JavaScript客户端框架,用于开发Web应用程序并使用MVC架构模式，这种框架用于“构建野心勃勃的 Web 应用程序”，旨在为 JavaScript 开发人员提高工作效率。官方网站上显示用户包括雅虎、Square、Livingsocial、Groupon、Twitch、TED、网飞、Heroku 和微软。
+
+支持的操作系统：与操作系统无关
+相关网站：https://emberjs.com
+
+
 
 
 
