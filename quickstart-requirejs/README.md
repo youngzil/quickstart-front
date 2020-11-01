@@ -1,5 +1,5 @@
-https://requirejs.org/
-https://github.com/requirejs/requirejs
+[RequireJS官网](https://requirejs.org/)  
+[RequireJS Github](https://github.com/requirejs/requirejs)  
 
 
 

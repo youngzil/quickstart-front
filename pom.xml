@@ -1,26 +1,21 @@
 <?xml version="1.0"?>
 <project
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
-	xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
-	<parent>
-		<groupId>org.quickstart</groupId>
-		<artifactId>quickstart-all</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>..</relativePath> <!-- lookup parent from repository -->
-	</parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.quickstart</groupId>
+  <artifactId>quickstart-front</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>${project.artifactId}-${project.version}</name>
+  <url>http://maven.apache.org</url>
+  <description>Demo project for Spring Boot Admin</description>
 
-	<modelVersion>4.0.0</modelVersion>
-	<artifactId>quickstart-front</artifactId>
-	<packaging>pom</packaging>
-	<name>${project.artifactId}-${project.version}</name>
-	<url>http://maven.apache.org</url>
-	<description>Demo project for Spring Boot Admin</description>
-
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
 
   <dependencies>
     <dependency>
@@ -33,7 +28,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.13</version>
+      <version>4.13.1</version>
       <scope>test</scope>
     </dependency>
 
@@ -41,15 +36,15 @@
 
 
   <modules>
-		<module>quickstart-angular</module>
-		<module>quickstart-bootstrap</module>
-		<module>quickstart-echarts</module>
-		<module>quickstart-javascript</module>
-		<module>quickstart-vuejs</module>
-		<module>quickstart-ztree</module>
-		<module>quickstart-layui</module>
-		<module>quickstart-requirejs</module>
-	</modules>
+    <module>quickstart-angular</module>
+    <module>quickstart-bootstrap</module>
+    <module>quickstart-echarts</module>
+    <module>quickstart-javascript</module>
+    <module>quickstart-vuejs</module>
+    <module>quickstart-ztree</module>
+    <module>quickstart-layui</module>
+    <module>quickstart-requirejs</module>
+  </modules>
 
   <build>
     <plugins>

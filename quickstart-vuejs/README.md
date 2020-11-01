@@ -1,13 +1,15 @@
-https://vuejs.org/
-https://github.com/vuejs/vue
-https://github.com/topics/vue
-https://gitee.com/mirrors/vue-js
+[VueJS官网](https://vuejs.org/)  
+[VueJS Github](https://github.com/vuejs/vue)  
+
+[VueJS 3.X中文文档](https://v3.vuejs.org/guide/introduction.html)  
+[VueJS 2.X文档](https://vuejs.org/v2/guide/installation.html)  
+
+[Github上VueJS资料](https://github.com/topics/vue)  
+[VueJS V2中文文档](https://cn.vuejs.org/v2/guide/index.html)  
+[VueJS介绍](http://www.oschina.net/p/vue-js)  
 
 
 
-https://vuejs.org/v2/guide/installation.html
-https://cn.vuejs.org/v2/guide/index.html
-http://www.oschina.net/p/vue-js
 
 https://saucelabs.com/u/vuejs
 
