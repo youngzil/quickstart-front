@@ -4,19 +4,11 @@
 ---------------------------------------------------------------------------------------------------------------------
 ## VuePress介绍
 
+VuePress：Vue 驱动的静态网站生成器  
+[VuePress官网](https://vuepress.vuejs.org/)  
+[VuePress Github](https://github.com/vuejs/vuepress)  
 
-
-VuePress
-Vue 驱动的静态网站生成器
-
-
-VuePress官网
-https://vuepress.vuejs.org/
-https://github.com/vuejs/vuepress
-
-
-VuePress中文网
-https://www.vuepress.cn/
+[VuePress中文网](https://www.vuepress.cn/)  
 
 
 搭建参考

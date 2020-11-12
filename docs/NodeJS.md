@@ -93,7 +93,7 @@ https://blog.csdn.net/qq_37164975/article/details/106441692
 
 
 
-NVM
+## NVM
 节点版本管理器-兼容POSIX的bash脚本，用于管理多个活动的node.js版本
 https://github.com/nvm-sh/nvm
 
@@ -103,26 +103,41 @@ https://www.jianshu.com/p/d0e0935b150a
 
 
 
+## Node.js
 
 Node.js是能够在服务器端运行JavaScript的开放源代码、跨平台JavaScript运行环境。Node.js由Node.js基金会持有和维护[2]，并与Linux基金会有合作关系[3]。Node.js采用Google开发的V8运行代码，使用事件驱动、非阻塞和异步输入输出模型等技术来提高性能，可优化应用程序的传输量和规模。这些技术通常用于数据密集的即时应用程序。
 
 Node.js大部分基本模块都用JavaScript语言编写。在Node.js出现之前，JavaScript通常作为客户端程序设计语言使用，以JavaScript写出的程序常在用户的浏览器上运行。Node.js的出现使JavaScript也能用于服务端编程。Node.js含有一系列内置模块，使得程序可以脱离Apache HTTP Server或IIS，作为独立服务器运行。
 
-https://nodejs.org/en/
-https://nodejs.org/zh-cn/
-https://github.com/nodejs/node
+
+Node.js is an open-source, cross-platform, JavaScript runtime environment. It executes JavaScript code outside of a browser. For more information on using Node.js, see the Node.js Website.
+
+Node.js是一个开源，跨平台的JavaScript运行时环境。它在浏览器外部执行JavaScript代码。有关使用Node.js的更多信息，请参见Node.js网站。
+
+Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
+
+Node.js® 是一个基于 Chrome V8 引擎 的 JavaScript 运行时。
 
 
-https://zh.wikipedia.org/wiki/Node.js
+
+[Node.js官网](https://nodejs.org/en/)  
+[Node.js中文](https://nodejs.org/zh-cn/)  
+[Node.js Github](https://github.com/nodejs/node)  
+[Node.js wiki](https://zh.wikipedia.org/wiki/Node.js)  
+
+
 
 
 npm 是什么？
 npm 是JavaScript 世界的包管理工具，并且是Node.js 平台的默认包管理工具。通过npm 可以安装、共享、分发代码，管理项目依赖关系。
 
+
+NPM是随同NodeJS
+
 NPM是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题，常见的使用场景有以下几种：
-允许用户从NPM服务器下载别人编写的第三方包到本地使用。
-允许用户从NPM服务器下载并安装别人编写的命令行程序到本地使用。
-允许用户将自己编写的包或命令行程序上传到NPM服务器供别人使用。
+- 允许用户从NPM服务器下载别人编写的第三方包到本地使用。
+- 允许用户从NPM服务器下载并安装别人编写的命令行程序到本地使用。
+- 允许用户将自己编写的包或命令行程序上传到NPM服务器供别人使用。
 
 https://www.runoob.com/nodejs/nodejs-npm.html
 https://www.npmjs.cn/
@@ -236,10 +251,6 @@ jar xvf test.jar
 https://www.npmjs.com/package/aid-cli
 http://10.1.241.36/uxt/aid-cli/wikis/home
 http://10.1.241.36:8888/taurus-desktop/guide/get-started
-
-
-
----------------------------------------------------------------------------------------------------------------------
 
 
 

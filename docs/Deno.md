@@ -1,7 +1,17 @@
-https://deno.land/
+## Deno
 
-https://github.com/denoland/deno
 
+[Deno官网](https://deno.land/)  
+[Deno Github](https://github.com/denoland/deno)  
+
+
+Deno是使用V8并内置于Rust的JavaScript和TypeScript的简单，现代且安全的运行时。
+
+
+
+A secure runtime for JavaScript and TypeScript.
+
+JavaScript和TypeScript的安全运行时。
 
 
 
