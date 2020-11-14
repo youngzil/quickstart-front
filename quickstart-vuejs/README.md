@@ -1,13 +1,21 @@
-## VueJS
+- [VueJS介绍](#VueJS介绍)
+- [Vue CLI脚手架](#Vue-CLI脚手架)
+- [Vue开发方式](#Vue开发方式)
+
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+## VueJS介绍
 
 [VueJS官网](https://vuejs.org/)  
 [VueJS Github](https://github.com/vuejs/vue)  
-[VueJS 3.X文档](https://v3.vuejs.org/style-guide/)  
+[VueJS 3.X文档](https://v3.vuejs.org/guide/introduction.html)  
+[VueJS 3.X文档2](https://v3.vuejs.org/style-guide/)  
 [VueJS 2.X文档](https://vuejs.org/v2/guide/installation.html)  
 
-[VueJS 3.X中文文档](https://v3.vuejs.org/guide/introduction.html)  
-
 [Github上VueJS资料](https://github.com/topics/vue)  
+[VueJS中文网](https://cn.vuejs.org/)  
 [VueJS V2中文文档](https://cn.vuejs.org/v2/guide/index.html)  
 [VueJS介绍](http://www.oschina.net/p/vue-js)  
 
@@ -28,7 +36,7 @@ https://saucelabs.com/u/vuejs
 ---------------------------------------------------------------------------------------------------------------------
 
 
-## Vue CLI
+## Vue CLI脚手架
 
 [Vue CLI官网](https://cli.vuejs.org/)  
 [Vue CLI Github](https://github.com/vuejs/vue-cli)  
@@ -72,6 +80,38 @@ https://vuxjs.gitbooks.io/vux/content/install/vue.html
 
 
 ---------------------------------------------------------------------------------------------------------------------
+
+## Vue开发方式
+
+- CDN方式，直接通过标签script引入
+- Vue CLI脚手架方式
+
+
+
+CDN方式，直接通过标签script引入
+    
+使用VS Code开发
+
+安装插件：  
+Live Server 热更新  
+Vetur   关键字高亮显示，  
+
+
+
+Vue CLI脚手架方式
+
+参考 [Vue CLI脚手架](#Vue-CLI脚手架)
+
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------
+
 
 
 [vue入门 vue与react和Angular的关系和区别](https://www.cnblogs.com/wxtlinlin/p/6541895.html)  

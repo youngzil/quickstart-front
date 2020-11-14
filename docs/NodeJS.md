@@ -6,16 +6,19 @@
 ## NVM安装和NodeJS安装
 
 
-nvm官网
-https://github.com/nvm-sh/nvm
+NVM——Node Version Manager（Node版本管理器）
+
+
+[nvm官网](https://github.com/nvm-sh/nvm)
+
 
 
 这种安装都需要联网
 要安装或更新 nvm，应运行install脚本。为此，您可以手动下载并运行脚本，也可以使用以下cURL或Wget命令：
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
 或者
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
 
 
 vim ~/.bashrc 写入下面代码
@@ -69,6 +72,14 @@ nvm ls-remote            // 查看目前线上所能安装的所有 node 版本
 nvm alias default v8.11.1 // 更改默认版本，使用 6.11.0 作为预设使用的 node 版本
 nvm current     //查看当前的Node.js版本
 
+
+
+
+前端安装完 node 后，最好设置下淘宝的镜像源，不建议使用 cnpm（可能会出现奇怪的问题）
+
+npm config set registry https://registry.npm.taobao.org
+配置后可通过下面方式来验证是否成功
+npm config get registry
 
 
 

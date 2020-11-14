@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>VueJS Tutorials</title>
+    <link href="styles.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="vue-app">
+
+        <h1>Method</h1>
+        <h1>Hey, {{ name }}</h1>
+        <h1>Wechat, {{ wechat }}</h1>
+        <h1>{{greet("night")}}</h1>
+        <h1>{{ greet('afternoon') }}</h1>
+        <h1>{{ sayHello('World') }}</h1>
+
+        <h1>Data Binding</h1>
+        <p><a v-bind:href="website">The Net Baidu Website</a></p>
+        <p><a :href="website">The Net Baidu Website</a></p>
+        <p v-html="websiteTag"></p>
+        <p><input type="text" :value="name" /></p>
+    </div>
+
+    <div id="vue-event">
+        <h1>Events</h1>
+        <button v-on:click="addAge()">addAge() my age</button>
+        <button v-on:click="addAge">addAge my age</button>
+        <button v-on:click="age++">add my age</button>
+        <br />
+        <button @click="age--">subtract my age</button>
+        <br />
+        <button v-on:dblclick="add(10)">add 10 my age</button>
+        <br />
+        <button @dblclick="subtract(10)">subtract 10 my age</button>
+        <br />
+        <p>My age is: {{age}}</p>
+        <br />
+
+
+        <!--Event事件属性修饰符-->
+        <p><a v-on:click="click" href="https://www.baidu.com/">百度</a></p>
+        <p><a v-on:click.prevent="click" href="https://www.baidu.com/">百度2</a></p>
+        <br />
+
+
+        <p>MouseEvent mousemove</p>
+        <div id="canvas" v-on:mousemove="updateXY">{{ x }} , {{ y }}</div>
+
+        <h1>Keyboard Events</h1>
+        <label>姓名:</label>
+        <input type="text" v-on:keyup="logName" />
+        <label>年龄:</label>
+        <input type="text" v-on:keyup="logAge" />
+        <label>Name:</label>
+        <input type="text" v-on:keyup.enter="logName" />
+        <label>Age:</label>
+        <input type="text" v-on:keyup.alt.enter="logAge" />
+
+
+        <h1>双向数据绑定 input/select/textarea</h1>
+        <label>Name:</label>
+        <input type="text" v-on:keyup.enter="logName" v-model="name" />
+        <span>{{ name }}</span>
+        <label>Age:</label>
+        <input type="text" v-on:keyup.alt.enter="logAge" v-model="age" />
+        <span>{{ age }}</span>
+        <label>Name2:</label>
+        <input type="text" v-on:keyup.enter="logName" v-model.lazy="name" />
+        <span>{{ name }}</span>
+
+
+        <h1>ref获取元素</h1>
+        <label>Name:</label>
+        <input type="text" @keyup="getName" ref="name" />
+        <span>{{ name }}</span>
+        <label>Age:</label>
+        <input type="text" @keyup="getAge" ref="age" />
+        <span>{{ age }}</span>
+
+    </div>
+
+    <div id="vue-computed">
+        <h1>Computed Properties计算属性</h1>
+        <button @click="a++">Add to A</button>
+        <button @click="b++">Add to B</button>
+        <p>A - {{ a }}</p>
+        <p>B - {{ b }}</p>
+
+        <!--methods 一个属性变化，所有的method都执行，可以没有返回值，调用必须是()-->
+        <!-- <p>Age + A = {{ addToA() }}</p>
+        <p>Age + B = {{ addToB() }}</p> -->
+
+        <!--Computed 一个属性变化，只会执行当前一个，必须有返回值，method可以没有返回值,调用不能有()-->
+        <p>Age + A = {{ addToA }}</p>
+        <p>Age + B = {{ addToB }}</p>
+
+    </div>
+
+    <div id="vue-css">
+        <h1>动态样式绑定 两种方式</h1>
+
+        <h2>示例1 属性绑定</h2>
+        <div @click="mrChangeColor = !mrChangeColor" v-bind:class="{available:mrChangeColor}">
+            <span>Hello Dynamic CSS</span>
+        </div>
+
+        <h2>示例2 计算属性绑定</h2>
+        <button @click="mrChangeColor = !mrChangeColor">Toggle ChangeColor</button>
+        <button @click="mrChangeLength = !mrChangeLength">Toggle ChangeLength</button>
+        <div v-bind:class="computedClasses">
+            <span>Hello computed Dynamic CSS</span>
+        </div>
+
+    </div>
+
+    <div id="vue-condition">
+        <h1>Conditionals</h1>
+
+        <h2>v-if指令：条件不成立，dom都不存在</h2>
+        <button v-on:click="error = !error">Toggle error</button>
+        <button v-on:click="success = !success">Toggle success</button>
+        <p v-if="error" class="error">There has been an error</p>
+        <p v-else-if="success" class="success">Whooo, success :)</p>
+        <p v-else class="success">Others</p>
+
+        <h2>v-show指令：条件成立不成立，dom都存在，通过style="display: none;"控制是否显示</h2>
+        <p v-show="error" class="error">There has been an error，网络连接失败：404</p>
+        <p v-show="success" class="success">Whooo, success :)，网络连接成功：200</p>
+    </div>
+
+
+    <div id="vue-loop">
+        <h1>Looping through lists</h1>
+
+        <h2>v-for指令</h2>
+
+        {{characters[0]}}
+        {{characters[1]}}
+        {{characters[2]}}
+        {{characters[3]}}
+
+        <ul>
+            <li v-for="character in characters">{{ character }}</li>
+        </ul>
+
+        <ul>
+            <li v-for="(character,index) in characters">{{ index }}-{{ character }}</li>
+        </ul>
+
+        <ul>
+            <li v-for="(ninja, index) in ninjas">{{ index }} . {{ ninja.name }} - {{ ninja.age }}</li>
+        </ul>
+
+        <!--dom有多个div-->
+        <div v-for="(ninja, index) in ninjas">
+            <h3>{{ index }} . {{ ninja.name }}</h3>
+            <p>Age - {{ ninja.age }}</p>
+        </div>
+
+        <!--dom没有div-->
+        <template v-for="(ninja, index) in ninjas">
+            <h3>{{ index }} . {{ ninja.name }}</h3>
+            <p>Age - {{ ninja.age }}</p>
+        </template>
+
+        <!--遍历对象-->
+        <template v-for="ninja in ninjas">
+            <div v-for="(val, key) in ninja">
+                <p>{{key}} - {{ val }}</p>
+            </div>
+            <hr />
+        </template>
+
+    </div>
+
+
+    <div id="vue-demo">
+        <!-- bag image -->
+        <div id="bag" v-bind:class="{ burst: ended }"></div>
+
+        <!-- bag health bar -->
+        <div id="bag-health">
+            <div v-bind:style="{ width: health + '%' }"></div>
+        </div>
+
+        <!-- game control buttons -->
+        <div id="controls">
+            <button v-on:click="punch" v-show="!ended">Punch</button>
+            <button v-on:click="restart">Restart</button>
+        </div>
+    </div>
+
+
+    <h1>Multiple Vue instances</h1>
+    <div id="vue-app-one">
+        <h2>{{ title }}</h2>
+        <p>{{ greet }}</p>
+
+        <h1>Vue App One </h1>
+        <greeting></greeting>
+    </div>
+    <div id="vue-app-two">
+        <h2>{{ title }}</h2>
+        <p>{{ greet }}</p>
+        <button v-on:click="changeTitle">Change App One Title</button>
+
+        <!--模板后面的代码不会加载，所以放在了最后面-->
+        <h1>Vue App Two</h1>
+        <greeting />
+    </div>
+
+    <h1>Templates</h1>
+    <div id="vue-app-three">
+        <h1>Vue App Three </h1>
+        <greeting></greeting>
+    </div>
+    <div id="vue-app-four">
+        <h1>Vue App Four</h1>
+        <greeting />
+    </div>
+
+    <!--模板后面的代码不会加载，这里只会加载前面一个-->
+    <div class="test"></div>
+    <div class="test"></div>
+
+
+    <div id="vue-fetch">
+
+        <h1>Fetch请求</h1>
+
+        <form @submit.prevent="onSubmit">
+            <input type="text" v-model="todo.title" />
+            <input type="checkbox" v-model="todo.completed" />
+            <input type="submit" value="提交">
+        </form>
+
+        <ul>
+            <li v-for="todo in todos">
+                <h1>{{todo.title}}</h1>
+                <p v-if="todo.completed">{{todo.completed}}</p>
+            </li>
+        </ul>
+
+    </div>
+
+    <div id="vue-axios">
+
+        <h1>Axios请求</h1>
+
+        <form @submit.prevent="onSubmit">
+            <input type="text" v-model="todo.title" />
+            <input type="checkbox" v-model="todo.completed" />
+            <input type="submit" value="提交">
+        </form>
+
+        <ul>
+            <li v-for="todo in todos">
+                <h1>{{todo.title}}</h1>
+                <p v-if="todo.completed">{{todo.completed}}</p>
+            </li>
+        </ul>
+
+    </div>
+
+</body>
+
+<script src="app.js"></script>
+
+</html>
