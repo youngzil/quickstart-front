@@ -142,6 +142,9 @@ Node.js® 是一个基于 Chrome V8 引擎 的 JavaScript 运行时。
 npm 是什么？
 npm 是JavaScript 世界的包管理工具，并且是Node.js 平台的默认包管理工具。通过npm 可以安装、共享、分发代码，管理项目依赖关系。
 
+npm（全称 Node Package Manager，即“node包管理器”）是Node.js默认的、用JavaScript编写的软件包管理系统。
+
+
 
 NPM是随同NodeJS
 
@@ -150,9 +153,13 @@ NPM是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署�
 - 允许用户从NPM服务器下载并安装别人编写的命令行程序到本地使用。
 - 允许用户将自己编写的包或命令行程序上传到NPM服务器供别人使用。
 
-https://www.runoob.com/nodejs/nodejs-npm.html
-https://www.npmjs.cn/
-https://github.com/npm/cli
+
+[npm官网](https://www.npmjs.com/)  
+[npm Github地址](https://github.com/npm/cli)  
+[npm中文文档](https://www.npmjs.cn/)  
+[npm菜鸟教程](https://www.runoob.com/nodejs/nodejs-npm.html)  
+
+
 
 
 什么是aid-cli

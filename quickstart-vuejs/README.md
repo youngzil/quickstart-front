@@ -42,6 +42,7 @@ https://saucelabs.com/u/vuejs
 [Vue CLI Github](https://github.com/vuejs/vue-cli)  
 [Vue CLI文档](https://cli.vuejs.org/guide/)  
 [Vue CLI文档中文](https://cli.vuejs.org/zh/guide/)  
+[Vue CLI安装文档](https://cli.vuejs.org/zh/guide/installation.html)  
 
 
 🛠️ Standard Tooling for Vue.js Development
@@ -51,14 +52,21 @@ https://saucelabs.com/u/vuejs
 卸载之前的
 npm uninstall -g vue-cli
 
-安装
+
+可以使用下列任一命令安装这个新的包：
 npm install -g @vue/cli
 # OR
 yarn global add @vue/cli
 
+
+vue-cli如何安装指定版本
+npm uninstall -g @vue/cli
+npm install -g @vue/cli@版本号
+
+
 vue -V
 vue --version
-vue --version
+
 
 
 创建项目hello-world
@@ -71,6 +79,10 @@ npm run serve
 
 访问URL
 
+
+
+[npm太慢， 淘宝npm镜像使用方法](https://blog.csdn.net/quuqu/article/details/64121812)  
+[cnpm Github地址](https://github.com/cnpm/npm.taobao.org)  
 
 参考
 https://blog.csdn.net/Torey_Li/article/details/88029838
@@ -101,6 +113,13 @@ Vetur   关键字高亮显示，
 Vue CLI脚手架方式
 
 参考 [Vue CLI脚手架](#Vue-CLI脚手架)
+
+- Node.js运行时环境
+- NPM插件  
+    npm（全称 Node Package Manager，即“node包管理器”）是Node.js默认的、用JavaScript编写的软件包管理系统。
+
+
+
 
 
 
