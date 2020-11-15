@@ -1,3 +1,10 @@
+Vue有两个版本：vue2.X vue3.X
+
+Vue CLI是另外的版本号：现在最高版本是4.X
+
+
+
+
 一个Vue模板是.vue文件，包含三个部分：
 1. template（HTML部分，只能有一个跟标签）
 2. script（JS部分）
@@ -44,6 +51,61 @@ props和data存在相同的变量，控制台会报错，但是可以正常显�
 动态组件和缓存
 
 
+
+
+自定义脚手架模板：
+
+vue create vue3-example
+
+然后上下键选中  
+Manually select features 
+
+然后回车  
+空格键选中 或者 a全部选中 或者 a全部取消  
+
+然后回车配置，最后设置一个名字即可  
+
+
+
+添加插件  
+vue add vuetify
+
+vuetify是一个类似element ui的UI库
+
+
+
+
+
+环境变量
+
+文件名：  
+.env  
+.env.development  
+.env.production  
+
+里面的变量名称必须是VUE_APP_开头，也就是VUE_APP_XXX
+
+
+
+独立运行.vue文件
+
+vue serve Hello.vue
+
+
+
+
+创建项目方式：
+- 命令行：vue create vue3-example
+- 图形页面创建：vue ui
+
+
+
+基础路径的配置：vue.config.js
+参考webpack文档
+
+
+
+Composition API
 
 
 

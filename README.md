@@ -56,6 +56,7 @@
 - [VueJS介绍](quickstart-vuejs/README.md)
     - [VueJS开发工具](quickstart-vuejs/README.md#Vue-CLI)
     - [Element组件](docs/Element.md)
+    - [Vuetify组件](docs/Vuetify.md)
     - [Avue.js](docs/Avue.js.md)
 - [Deno框架](docs/Deno.md)
 - [Blaze介绍](docs/Blaze.md)
