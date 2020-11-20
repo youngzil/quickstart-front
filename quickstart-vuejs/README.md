@@ -20,6 +20,9 @@
 [VueJS介绍](http://www.oschina.net/p/vue-js)  
 
 
+[Vuex文档](https://vuex.vuejs.org/zh/)  
+[vuex的语法糖-辅助函数mapState , mapMutations , mapActions , mapGetters](https://juejin.im/post/6844903989142618119)  
+
 
 Vue.js 是一套构建用户界面的渐进式框架，专注于MVVM 模型的 ViewModel 层。
 
