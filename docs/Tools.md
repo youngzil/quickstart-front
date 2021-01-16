@@ -48,7 +48,8 @@ Axios 是一个基于Promise的HTTP客户端，可以用于浏览器和node.js�
 
 ### Axios和Ajax区别
 
-jquery是浏览器端 axios 是node与浏览器都可以使用 jquery 是 callback 处理请求响应 axios是promise
+jquery是浏览器端，jquery 是 callback 处理请求响应  
+axios 是node与浏览器都可以使用，axios是promise  
 
 Axios 在NPM上的描述是：Promise based HTTP client for the browser and node.js，是一种基于Promise封装的HTTP客户端。
 
