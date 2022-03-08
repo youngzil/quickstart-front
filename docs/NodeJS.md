@@ -1,5 +1,7 @@
 - [NVM安装和NodeJS安装](#NVM安装和NodeJS安装)
 - [NVM、NodeJS、NPM介绍](#NVM、NodeJS、NPM介绍)
+- [什么是Yarn](#什么是Yarn)
+
 
 ---------------------------------------------------------------------------------------------------------------------
 
@@ -12,13 +14,16 @@ NVM——Node Version Manager（Node版本管理器）
 [nvm官网](https://github.com/nvm-sh/nvm)
 
 
+[如何更新NVM](https://www.jianshu.com/p/045df8e20ebe)  
+
 
 这种安装都需要联网
 要安装或更新 nvm，应运行install脚本。为此，您可以手动下载并运行脚本，也可以使用以下cURL或Wget命令：
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 或者
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+
 
 
 vim ~/.bashrc 写入下面代码
@@ -84,11 +89,47 @@ npm config get registry
 
 
 问题：
-N/A version is not installed...
+1. N/A version is not installed...  
 Node N/A 所指向的版本不存在
 
-参考
+参考  
 https://blog.csdn.net/qq_37164975/article/details/106441692
+
+
+
+2. 关于安装nvm 报错Failed to connect to raw.githubusercontent.com port 443: Connection refused
+
+笔者最近发现 github 的用户头像和自己文章中的图片显示不出来了。然后今天发现安装 homeBrew 和 nvm 出现了标题的报错信息。
+
+以上是安装 pnpm 的报错信息，可以发现，脚本需要到 raw.githubusercontent.com 上拉取代码。
+
+网上搜索了一下，发现是 github 的一些域名的 DNS 解析被污染，导致DNS 解析过程无法通过域名取得正确的IP地址。
+
+
+### 解决方案
+
+打开 https://www.ipaddress.com/ 输入访问不了的域名
+
+查询之后可以获得正确的 IP 地址
+
+在本机的 host 文件中添加，建议使用 switchhosts 方便 host 管理
+```
+199.232.68.133 raw.githubusercontent.com
+199.232.68.133 user-images.githubusercontent.com
+199.232.68.133 avatars2.githubusercontent.com
+199.232.68.133 avatars1.githubusercontent.com
+```
+
+添加以上几条 host 配置，页面的图片展示就正常了，homebrew 也能装了，nvm 也行动灵活了。
+
+
+参考  
+[如何解决类似 curl: (7) Failed to connect to raw.githubusercontent.com port 443: Connection refused 的问题 #10](https://github.com/hawtim/blog/issues/10)
+ 
+
+
+
+
 
 
 
@@ -96,10 +137,15 @@ https://blog.csdn.net/qq_37164975/article/details/106441692
 
 ## NVM、NodeJS、NPM介绍
 
-1、nvm管理多个活动的node.js版本，可以方便的在同一台设备上进行多个node版本之间切换
-2、Node.js是能够在服务器端运行JavaScript的开放源代码、跨平台JavaScript运行环境。
-3、NPM是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题
-4、
+1. NVM——Node Version Manager（Node版本管理器）NVM——Node Version Manager（Node版本管理器）
+nvm管理多个活动的node.js版本，可以方便的在同一台设备上进行多个node版本之间切换
+2. Node.js是能够在服务器端运行JavaScript的开放源代码、跨平台JavaScript运行环境。
+3. NPM是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题
+npm（全称 Node Package Manager，即“node包管理器”）是Node.js默认的、用JavaScript编写的软件包管理系统。
+4. 
+
+
+
 
 
 
@@ -273,8 +319,132 @@ http://10.1.241.36:8888/taurus-desktop/guide/get-started
 
 
 ---------------------------------------------------------------------------------------------------------------------
+## 什么是Yarn
+Yarn 就是一个类似于 npm 的包管理工具，它是由 facebook 推出并开源。
+与 npm 相比，yarn 有着众多的优势，主要的优势在于：速度快、离线模式、版本控制。
+
+[Yarn官网](https://yarnpkg.com/getting-started)  
+[Yarn Github](https://github.com/yarnpkg/berry)  
+[Yarn中文文档](https://yarn.bootcss.com/docs/getting-started/)  
+[Yarn中文网](http://yarnpkg.top/Installation.html)  
+
+
+### 背景
+在 Node 生态系统中，依赖通常安装在项目的 node_modules 文件夹中。然而，这个文件的结构和实际依赖树可能有所区别，因为重复的依赖可以合并到一起。npm 客户端把依赖安装到 node_modules 目录的过程具有不确定性。这意味着当依赖的安装顺序不同时，node_modules 目录的结构可能会发生变化。这种差异可能会导致类似“我的电脑上可以运行，别的电脑上不行”的情况，并且通常需要花费大量时间定为与解决。
+
+有时候就会遇到这种情况，完整可运行的项目上传到 git 上，别人 pull 下来以后，npm install 会报错。
+
+Yarn 一开始的主要目标是解决由于语义版本控制而导致的 npm 安装的不确定性问题。虽然可以用 npm shrinkwrap 来实现可预测的依赖关系树，但它并不是默认选项，而是取决于所有的开发人员指导并启用这个选项。
+
+npm 5+ 以后的版本加入了 package-lock.json 可以用来锁版本，package-lock.json 的名字，一看就懂，更清楚，但是不向后兼容。
+
+npm-shrinkwrap.json 向后兼容 npm 2-4。
+
+举个例子：  
+npm 对包引入顺序也十分的敏感，比如在一个空项目里执行以下命令：
+
+而 yarn 则会保证无论怎样引入的顺序，目录依赖结构都是一致的，确保不会发生这样的BUG。
+
+
+### 速度快
+npm 会等一个包完全安装完才跳到下一个包，但 yarn 会并行执行包，因此速度会快很多。
+
+Yarn 会缓存它下载的每个包，所以无需重复下载。它还能并行化操作以最大化资源利用率，安装速度之快前所未有。
+
+### 离线模式
+之前安装过的包会被保存进缓存目录，以后安装就直接从缓存中复制过来，这样做的本质还是会提高安装下载的速度，避免不必要的网络请求。
+
+### 可靠可确定性
+保证各平台依赖的一致性
+
+### 版本控制
+npm 用下来比较强的一个痛点就是：当包的依赖层次比较深时，版本控制不够精确。会出现相同 package.json，但不同人的电脑上安装出不同版本的依赖包，出现类似“我的电脑上可以运行，别的电脑上不行”的 bug 很难查找。你可以使用 npm-shrinkwrap 来实现版本固化，版本信息会写入 npm-shrinkwrap.json 文件中，但它毕竟不是 npm 的标准配置。
+
+而 yarn 天生就能实现版本固化。会生成一个类似 npm-shrinkwrap.json 的 yarn.lock 文件，而文件内会描述包自身的版本号，还会锁定所有它依赖的包的版本号
+
+yarn.lock 存储着你的每个包的确切依赖版本，能确保从本地开发到生产环境，所有机器上都有精确相同的依赖版本。
 
 
 
+## Yarn安装
+brew install yarn
+或者
+npm install -g yarn
+或者
+curl -o- -L https://yarnpkg.com/install.sh | bash
+
+yarn -version
+
+
+[Yarn安装](https://yarn.bootcss.com/docs/install/#mac-stable)  
+[Yarn安装2](http://yarnpkg.top/Installation.html)  
+
+
+
+## Yarn换源
+Yarn 源仓库包下载不稳定
+
+// 查看 yarn 配置
+yarn config get registry
+或者
+yarn config list
+
+> registry: 'https://registry.yarnpkg.com'
+
+安装淘宝镜像  
+yarn config set registry https://registry.npm.taobao.org
+
+
+
+## Yarn常用命令
+
+npm install === yarn —— install安装是默认行为
+npm install taco --save === yarn add taco —— taco包立即被保存到 package.json 中。
+npm uninstall taco --save === yarn remove taco
+npm install taco --save-dev === yarn add taco --dev
+npm update --save === yarn upgrade
+
+npm install taco@latest --save === yarn add taco
+npm install taco --global === yarn global add taco —— 一如既往，请谨慎使用 global 标记。
+注意：使用yarn或yarn install安装全部依赖时是根据package.json里的”dependencies”字段来决定的
+
+npm init === yarn init
+npm init --yes/-y === yarn init --yes/-y
+npm link === yarn link
+npm outdated === yarn outdated
+npm publish === yarn publish
+npm run === yarn run
+npm cache clean === yarn cache clean
+npm login === yarn login
+npm test === yarn test
+
+Yarn 独有的命令
+yarn licenses ls —— 允许你检查依赖的许可信息
+yarn licenses generate —— 自动创建依赖免责声明 license
+yarn why taco —— 检查为什么会安装 taco，详细列出依赖它的其他包
+yarn why vuepress —— 检查为什么会安装 vuepress，详细列出依赖它的其他包
+
+
+
+### 特性
+Yarn 除了让安装过程变得更快与更可靠，还添加了一些额外的特性，从而进一步简化依赖管理的工作流。
+
+同时兼容 npm 与 bower 工作流，并支持两种软件仓库混合使用
+可以限制已安装模块的协议，并提供方法输出协议信息
+提供一套稳定的共有 JS API，用于记录构建工具的输出信息
+可读、最小化、美观的 CLI 输出信息
+
+
+
+
+
+
+
+参考  
+[Yarn安装与使用详细介绍](https://neveryu.github.io/2018/07/20/yarn/)  
+[]()  
+[]()  
+[]()  
+[]()  
 
 

@@ -4,6 +4,21 @@
 [Redux文档](https://redux.js.org/introduction/getting-started)  
 [Redux Github](https://github.com/reduxjs/redux)  
 
+[Redux 中文文档 (Redux in Chinese)](https://www.cntofu.com/book/4/docs/faq/ReactRedux.md)  
+[Redux 中文文档](https://cn.redux.js.org/)  
+[Redux 中文文档 Github地址](https://github.com/camsong/redux-in-chinese)  
+[Redux 中文文档](https://www.redux.org.cn/)  
+[Redux 中文网](https://www.reduxjs.cn/introduction/getting-started/)  
+[]()
+
+
+React-Redux是Redux的官方React绑定库。它能够使你的React组件从Redux store中读取数据，并且向store分发actions以更新数据
+[React Redux](https://react-redux.js.org/)  
+[React Redux Github](https://github.com/reduxjs/react-redux)  
+
+[React-Redux 中文文档](https://segmentfault.com/a/1190000017064759)
+[]()  
+
 
 Redux一个用于应用程序状态管理的开源JavaScript库。Redux经常与React搭配运用，但其也可以独立使用。 维基百科
 
